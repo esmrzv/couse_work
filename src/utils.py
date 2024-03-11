@@ -14,3 +14,9 @@ def filter_by_status(dictionary_list):
         if "state" in operations and operations["state"] == "EXECUTED":
             filter_status_list.append(operations)
     return filter_status_list
+
+
+def sort_by_data(dictionary_list, number_of_operations):
+    '''Сортировка словарей списка по дате'''
+    dictionary_list = sorted(dictionary_list, key=lambda x: x["date"], reverse=True)
+    return dictionary_list[:number_of_operations]
